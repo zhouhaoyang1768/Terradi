@@ -161,7 +161,7 @@ void Hook::SetHook(CodeAddress originalFunction, BridgeAddress bridgeAddress, Co
 
 	do {
 		vProtected = VirtualProtect(bridgeAddress, HOOK_INSTRUCTION_LENGTH2 + JUMP_SKIP_OFFSET_INSTRUCTION_LENGTH, PAGE_EXECUTE_READWRITE, &dwOldProtect);
-		Sleep(50);
+		Sleep(20);
 	} while (!vProtected);
 
 	CodeGen CG(bridgeAddress);
